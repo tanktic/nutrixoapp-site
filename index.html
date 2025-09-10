@@ -6,30 +6,66 @@
   <title>NutrixoApp — Coming Soon</title>
   <meta name="description" content="De slimme AI meal & workout planner. Binnenkort beschikbaar." />
   <style>
-    :root { --w: 680px; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-    * { box-sizing: border-box; }
-    body { margin:0; min-height:100vh; display:grid; place-items:center; background:#0f172a; color:#e2e8f0; }
-    .card { width:min(92vw, var(--w)); background:#111827; border:1px solid #1f2937; padding:32px; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,.35); }
-    h1 { margin:0 0 8px; font-size: clamp(28px, 5vw, 38px); }
-    p { margin:8px 0 18px; line-height:1.6; color:#cbd5e1; }
-    .pill { display:inline-block; padding:8px 12px; border:1px solid #334155; border-radius:999px; font-size:14px; color:#cbd5e1; }
-    .row { display:flex; gap:12px; flex-wrap:wrap; margin-top:14px; }
-    .btn { appearance:none; border:none; padding:12px 16px; border-radius:12px; background:#22c55e; color:#06260f; font-weight:700; cursor:pointer; }
-    .btn:disabled { opacity:.8; }
-    .muted { font-size:12px; opacity:.7; }
+    :root {
+      --bg: #0f172a;        /* donkerblauw-zwart */
+      --card: #111827;      /* donkergrijs */
+      --text: #e2e8f0;      /* lichtgrijs */
+      --muted: #94a3b8;     /* gedempt grijs */
+      --accent: #22c55e;    /* groen */
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 40px;
+      text-align: center;
+      max-width: 600px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    }
+    h1 {
+      font-size: clamp(28px, 6vw, 40px);
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      color: var(--text);
+      letter-spacing: 1px;
+    }
+    footer {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
   <main class="card">
-    <span class="pill">NutrixoApp</span>
-    <h1>We’re cooking something healthy 🔥</h1>
+    <div class="logo">NutrixoApp</div>
+    <h1>Coming Soon</h1>
     <p>De slimme planner die jouw doelen, voorkeuren en apparatuur omzet in maaltijdplannen en trainingsschema’s.</p>
-    <div class="row">
-      <a class="btn" href="mailto:info@nutrixoapp.com?subject=Early%20access%20NutrixoApp">Meld me aan voor early access</a>
-      <span class="pill">Coming soon</span>
-    </div>
-    <p class="muted">© <span id="y"></span> NutrixoApp</p>
+    <footer>© <span id="year"></span> NutrixoApp</footer>
   </main>
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
